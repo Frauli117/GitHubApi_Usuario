@@ -48,3 +48,6 @@ GET /repos/{owner}/{repo}/languages
 Rate limit sin token: ~60 requests/hora.
 
 🖼️ Capturas
+
+Captura que muestra un perfil y sus repos:
+![image alt](https://github.com/Frauli117/GitHubApi_Usuario/blob/fd6c093ba84c0d0051f348155cf07872bd325dc4/Perfil%20%2B%20repos.png)
