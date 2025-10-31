@@ -1,0 +1,12 @@
+githubclient\ui\MainController.class
+githubclient\service\GitHubApi.class
+githubclient\ui\MainController$1.class
+githubclient\domain\Repo.class
+githubclient\domain\Repo$Owner.class
+githubclient\service\GitHubApi$2.class
+githubclient\domain\User.class
+githubclient\ui\MainController$2.class
+githubclient\util\ApiException.class
+module-info.class
+githubclient\App.class
+githubclient\service\GitHubApi$1.class

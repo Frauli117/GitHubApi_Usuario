@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane id="AnchorPane" prefHeight="865.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="githubclient.ui.MainController">
+    <top>
+            <VBox prefHeight="278.0" prefWidth="1013.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="999.0" spacing="8">
+            <TextField fx:id="usernameField" alignment="TOP_CENTER" prefHeight="36.0" prefWidth="928.0" promptText="Usuario de GitHub, ej. torvalds" HBox.hgrow="ALWAYS" />
+            <Button fx:id="searchButton" onAction="#onSearch" text="Buscar" />
+            <ProgressIndicator fx:id="loadingIndicator" prefHeight="20" prefWidth="20" visible="false" />
+            </HBox>
+            <Label fx:id="errorLabel" textFill="red" />
+            <HBox alignment="CENTER_LEFT" prefHeight="191.0" prefWidth="1013.0">
+            <ImageView fx:id="avatarImage" fitHeight="167.0" fitWidth="303.0" preserveRatio="true" />
+            <VBox prefHeight="167.0" prefWidth="631.0" spacing="2">
+            <Label fx:id="nameLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <Label fx:id="loginLabel" style="-fx-text-fill: #666;" />
+            <Label fx:id="bioLabel" maxWidth="800" wrapText="true" />
+            <HBox spacing="16">
+            <Label fx:id="followersLabel" />
+            <Label fx:id="followingLabel" />
+            <Label fx:id="locationLabel" />
+            <Label fx:id="blogLabel" />
+            </HBox>
+            </VBox>
+            </HBox>
+            </VBox>
+            </top>
+
+
+            <center>
+            <TabPane fx:id="tabPane" prefHeight="574.0" prefWidth="1013.0" stylesheets="@nord-light.css">
+            <Tab fx:id="reposTab" closable="false" text="Repos">
+            <VBox prefHeight="524.0" prefWidth="1047.0">
+            <TextField fx:id="filterField" prefHeight="16.0" prefWidth="1013.0" promptText="filtrar por nombre..." />
+            <TableView fx:id="repoTable" prefHeight="566.0" prefWidth="1136.0" stylesheets="@dracula.css" VBox.vgrow="ALWAYS">
+            <columns>
+            <TableColumn fx:id="colName" prefWidth="263.0" text="Nombre" />
+            <TableColumn fx:id="colStars" prefWidth="118.0" text="★ Stars" />
+            <TableColumn fx:id="colForks" prefWidth="163.0" text="Forks" />
+            <TableColumn fx:id="colLang" prefWidth="212.0" text="Lenguaje" />
+            <TableColumn fx:id="colUpdated" prefWidth="249.0" text="Última actualización" />
+            </columns>
+            </TableView>
+            </VBox>
+            </Tab>
+            <Tab fx:id="detailTab" closable="false" disable="true" text="Detalle">
+            <ScrollPane fitToWidth="true">
+            <VBox prefHeight="485.0" prefWidth="971.0">
+            <Label fx:id="repoNameLabel" style="-fx-font-size: 18px; -fx-font-weight:bold;" />
+            <Label fx:id="repoDescLabel" wrapText="true" />
+            <HBox spacing="16">
+            <Label fx:id="repoLangLabel" />
+            <Label fx:id="repoStarsLabel" />
+            <Label fx:id="repoForksLabel" />
+            <Label fx:id="repoUpdatedLabel" />
+            </HBox>
+            <Separator />
+            <Label style="-fx-font-weight: bold;" text="Lenguajes (porcentaje sobre el repo)" />
+            <PieChart fx:id="languagesPie" prefHeight="420" stylesheets="@dracula.css" />
+            <Label fx:id="languagesEmptyLabel" text="Sin datos de lenguajes para este repositorio." textFill="#666" visible="false" />
+            </VBox>
+            </ScrollPane>
+            </Tab>
+            </TabPane>
+            </center>
+   <stylesheets>
+      <URL value="@nord-light.css" />
+      <URL value="@dracula.css" />
+   </stylesheets>
+    
+</BorderPane>
