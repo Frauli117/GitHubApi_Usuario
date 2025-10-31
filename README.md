@@ -50,4 +50,9 @@ Rate limit sin token: ~60 requests/hora.
 🖼️ Capturas
 
 Captura que muestra un perfil y sus repos:
+
 ![image alt](https://github.com/Frauli117/GitHubApi_Usuario/blob/fd6c093ba84c0d0051f348155cf07872bd325dc4/Perfil%20%2B%20repos.png)
+
+Captura que muestra el detalle de un repo:
+
+![image alt](https://github.com/Frauli117/GitHubApi_Usuario/blob/39c78ea6af09a218f6d69364addd731dc4243a21/detalle%20java.png)
